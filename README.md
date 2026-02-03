@@ -2,6 +2,7 @@
 
 ## 📖 Project Overview
 This project focuses on the dynamic modeling, analysis, and control of a second-order RLC electrical system. The transfer function of the system is derived and analyzed using MATLAB. The system is also modeled using state-space representation in Simulink, and a PID controller is designed to improve transient and steady-state performance.
+
 [Full Project Report](Sistem_dinamigi_proje.pdf)
 
 ---
@@ -38,7 +39,7 @@ Capacitor voltage
 ## 📐 Transfer Function Analysis
 
 The transfer function of the RLC system was derived using circuit analysis and Laplace transform techniques.
-----------
+---
 $$
 H(s)=\frac{V_c(s)}{V_{in}(s)}=\frac{\frac{1}{LC}}{s^2+\frac{R}{L}s+\frac{1}{LC}}
 $$
@@ -50,7 +51,9 @@ $$
 $$
 H(s)=\frac{1000}{s^2+9s+1000}
 $$
-----------
+
+---
+
 ### System Characteristics
 - The system has **no zeros**
 - Poles are complex conjugate and located in the left half plane
