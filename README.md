@@ -1,71 +1,145 @@
-# RLC System Analysis and Control Using MATLAB & Simulink
+# RLC Electrical System Modeling and PID Control (MATLAB & Simulink)
 
 ## 📖 Project Overview
-This project focuses on the modeling, analysis, and control of an RLC circuit system. The transfer function of the system is derived and analyzed using MATLAB. Additionally, a state-space model is designed in Simulink, and a PID controller is implemented to improve system response characteristics such as settling time and stability.
+This project focuses on the dynamic modeling, analysis, and control of a second-order RLC electrical system. The transfer function of the system is derived and analyzed using MATLAB. The system is also modeled using state-space representation in Simulink, and a PID controller is designed to improve transient and steady-state performance.
+[Full Project Report](Sistem_dinamigi_proje.pdf)
 
 ---
 
 ## 🎯 Project Objectives
-- Derive the transfer function of an RLC circuit
-- Analyze system response to sinusoidal input
-- Model the system using state-space representation
+
+- Derive and analyze the transfer function of an RLC circuit
+- Analyze system time-domain response
+- Design a state-space model
+- Verify controllability and observability of the system
 - Design and implement a PID controller
-- Improve system dynamic performance (reduce settling time and improve stability)
+- Improve system dynamic performance
 
 ---
 
-## ⚙️ System Description
+## ⚙️ System Parameters
 
-The circuit parameters used in this project are:
+The circuit parameters used in this project:
 
-- Resistance (R) = 9 Ω  
-- Inductance (L) = 1 H  
-- Capacitance (C) = 1 mF  
+| Parameter | Value |
+|----------|---------|
+| Resistance (R) | 9 Ω |
+| Inductance (L) | 1 H |
+| Capacitance (C) | 1 mF |
 
 ### Input Signal
-Sinusoidal voltage signal
+Sinusoidal voltage input
 
-### Output
-Capacitor voltage response
+### Output Signal
+Capacitor voltage
 
 ---
 
-## 📐 Mathematical Modeling
+## 📐 Transfer Function Analysis
 
-The transfer function of the RLC circuit is derived using circuit analysis techniques.
+The transfer function of the RLC system was derived using circuit analysis and Laplace transform techniques.
+----------
+$$
+H(s)=\frac{V_c(s)}{V_{in}(s)}=\frac{\frac{1}{LC}}{s^2+\frac{R}{L}s+\frac{1}{LC}}
+$$
 
-The relationship between input voltage and capacitor voltage is modeled and analyzed using Laplace transform methods.
+$$
+R=9\Omega,\quad L=1H,\quad C=1mF
+$$
+
+$$
+H(s)=\frac{1000}{s^2+9s+1000}
+$$
+----------
+### System Characteristics
+- The system has **no zeros**
+- Poles are complex conjugate and located in the left half plane
+- The system is **stable**
+
+Pole values: 
+s = -4.5 ± 31.3i
+
+
+### System Behavior
+- Real part affects settling time
+- Imaginary part determines oscillation frequency
+- The system is underdamped
+
+Damping ratio:
+ζ = 0.1423
+
+---
+
+## 📊 Time Domain Analysis
+
+System response was analyzed using impulse and step response simulations.
+
+### Key Transient Response Parameters
+
+| Parameter | Value |
+|-----------|------------|
+| Rise Time | 0.0252 s |
+| Peak Time | 0.0702 s |
+| Maximum Overshoot | 72.77 % |
+| Settling Time | 0.8572 s |
+| Steady-State Value | 1 |
+| Maximum Output | 1.6366 |
+
+MATLAB simulation results were validated using analytical calculations and final value theorem.
 
 ---
 
 ## 🧮 State-Space Modeling
 
-The system is converted into state-space representation and implemented in Simulink.
+The RLC system was converted into state-space representation and implemented in Simulink.
 
-The state variables include:
-
+### State Variables
 - Inductor current
 - Capacitor voltage
 
-This model allows detailed dynamic system analysis.
+### System Properties
+
+Controllability matrix rank: 2  
+Observability matrix rank: 2  
+
+These results confirm that the system is fully controllable and observable.
 
 ---
 
 ## 🎛 PID Controller Design
 
-A PID controller is implemented to improve system performance.
+A closed-loop control system was designed using a PID controller.
 
-Controller goals:
+### PID Parameters
 
-- Reduce settling time
-- Improve stability
-- Optimize transient response
+| Parameter | Value |
+|------------|------------|
+| Kp | 4.1293 |
+| Ki | 54.5229 |
+| Kd | 0.0782 |
 
-System response is compared before and after PID implementation.
+The step input final value was set to 5 for controller evaluation.
+
+---
+
+## 📈 Performance Improvement with PID
+
+### Comparison Results
+
+| Parameter | Before PID | After PID |
+|------------|----------------|--------------|
+| Rise Time | 0.0252 s | 0.0155 s |
+| Peak Time | 0.0702 s | 0.0323 s |
+| Overshoot | 72.77 % | 9.85 % |
+| Settling Time | 0.8572 s | 0.2115 s |
+| Steady-State Error | 0.5 | 0 |
+
+The PID controller significantly improved system stability and transient response.
 
 ---
 
 ## 🛠 Tools and Technologies Used
+
 - MATLAB
 - Simulink
 - Control System Toolbox
@@ -75,44 +149,44 @@ System response is compared before and after PID implementation.
 ## ▶️ How to Run the Project
 
 1. Open MATLAB
-2. Load project files
-3. Run MATLAB scripts for transfer function analysis
-4. Open Simulink model file
-5. Run simulation and observe system response
+2. Run MATLAB scripts for transfer function analysis
+3. Open Simulink model
+4. Run simulation and observe system response
 
 ---
 
-## 📊 Results
+## 📷 Simulation Results
 
-The system response to sinusoidal input signal is analyzed.
+(Add here)
 
-Key observations:
-
-- System dynamic behavior is evaluated
-- PID controller significantly improves settling time
-- Stability performance is enhanced
-
-(You can add simulation output graphs here)
+- Step response without PID
+- Step response with PID
+- Simulink block diagram
+- State-space model diagram
 
 ---
 
-## 📷 Simulation Outputs
+## 📄 Project Report
 
-Add screenshots of:
-- System response without PID
-- System response with PID
-- Simulink model diagram
+A detailed technical report is included in this repository.
 
 ---
 
-## 📚 Report
-A detailed 10-page technical report is included in this repository describing modeling, simulation, and controller design processes.
+## 🎓 Additional Training
+
+The following MATLAB training modules were completed during this project:
+
+- Simulink Onramp
+- Simulink Fundamentals
+- Control System Modeling Essentials
+- Linearization of Nonlinear Systems
 
 ---
 
-## 🚀 Future Improvements
-- Implementation on real hardware
-- Advanced controller design (LQR, adaptive control, etc.)
+## 🚀 Future Work
+
+- Hardware implementation
+- Advanced control techniques (LQR, Adaptive Control)
 - Real-time system simulation
 
 ---
@@ -120,3 +194,6 @@ A detailed 10-page technical report is included in this repository describing mo
 ## 👨‍💻 Author
 Kerem Danışık  
 Electrical and Electronics Engineering Student
+
+
+
