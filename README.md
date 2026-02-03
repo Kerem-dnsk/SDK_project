@@ -3,7 +3,8 @@
 ## 📖 Project Overview
 This project focuses on the dynamic modeling, analysis, and control of a second-order RLC electrical system. The transfer function of the system is derived and analyzed using MATLAB. The system is also modeled using state-space representation in Simulink, and a PID controller is designed to improve transient and steady-state performance.
 
-[Full Project Report](Sistem_dinamigi_proje.pdf)
+[Full Project Report](RLC_System_Project_Report.pdf)
+
 
 ---
 
