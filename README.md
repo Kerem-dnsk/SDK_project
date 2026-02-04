@@ -159,23 +159,6 @@ The PID controller significantly improved system stability and transient respons
 
 ---
 
-## 📷 Simulation Results
-
-(Add here)
-
-- Step response without PID
-- Step response with PID
-- Simulink block diagram
-- State-space model diagram
-
----
-
-## 📄 Project Report
-
-A detailed technical report is included in this repository.
-
----
-
 ## 🎓 Additional Training
 
 The following MATLAB training modules were completed during this project:
